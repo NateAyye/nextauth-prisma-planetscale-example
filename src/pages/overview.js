@@ -12,7 +12,20 @@ export default function CamperVanPage() {
     console.log(session);
     return (
       <>
-        <p>Signed in as {userEmail}</p>
+        <div style={{ display: "flex" }}>
+          {session?.user.image && (
+            <img
+              style={{
+                width: 40 + "px",
+                height: 40 + "px",
+                borderRadius: 50 + "%",
+              }}
+              src={session?.user.image}
+              alt={"user Image"}
+            />
+          )}
+          <p>Signed in as {userEmail}</p>
+        </div>
         <button onClick={() => signOut()}>Sign out</button>
         <img
           alt={"sign-out"}
